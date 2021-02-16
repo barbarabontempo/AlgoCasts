@@ -7,6 +7,18 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// grider solution 1:
+// function palindrome(str) {
+//   let revStr = str.split("").reverse().join("");
+//   return str === revStr
+// }
+
+//grider solution 2:
+//the every function does a boolean check on every item in the array
+function palindrome(str) {
+  return str.split("").every((char, index) => {
+    return char === str[str.length - index - 1];
+  });
+}
 
 module.exports = palindrome;
