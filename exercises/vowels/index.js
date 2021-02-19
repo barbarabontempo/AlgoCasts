@@ -19,16 +19,22 @@
 //   return count;
 // }
 
-function vowels(str) {
-  let count = 0;
-  let vowelsStr = "aeiou";
+// function vowels(str) {
+//   let count = 0;
+//   let vowelsStr = "aeiou";
 
-  for (let char of str.toLowerCase()) {
-    if (vowelsStr.includes(char)) {
-      count++;
-    }
-  }
-  return count;
+//   for (let char of str.toLowerCase()) {
+//     if (vowelsStr.includes(char)) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+//with regex
+function vowels(str) {
+  const matches = str.match(/[aeiou]/gi);
+  return matches ? matches.length : 0;
 }
 
 module.exports = vowels;
